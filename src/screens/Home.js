@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Dimensions } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import Loading from '../components/Loading';
 import data from '../data/movies.json';
 
 class Home extends Component {
@@ -27,19 +28,28 @@ class Home extends Component {
   }
 
   render() {
-    const { movies } = this.state;
+    const { movies, loading } = this.state;
 
     return (
       <>
         <View style={styles.screen}>
-          <Text>Home screen</Text>
-          {movies.map((movie, index) => {
-            return (
-              <View key={index}>
-                <Text>{movie.title}</Text>
+          {loading ? (
+            <Loading />
+          ) : (
+            <ScrollView>
+              <View style={styles.content}>
+                <>
+                  {movies.map((movie, index) => {
+                    return (
+                      <View key={index} style={styles.movieContent}>
+                        <Text>{movie.title}</Text>
+                      </View>
+                    );
+                  })}
+                </>
               </View>
-            );
-          })}
+            </ScrollView>
+          )}
         </View>
       </>
     );
@@ -53,25 +63,14 @@ const styles = StyleSheet.create({
     flex: 1,
     height: height
   },
-  loadingContainer: {
-    flex: 1,
-    padding: 15,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
   text: {
     fontSize: 16,
     marginTop: 10,
     marginBottom: 20
   },
-  introText: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    marginTop: 10,
-    marginBottom: 10
-  },
-  emphasizeText: {
-    fontWeight: 'bold'
+  movieContent: {
+    flex: 1,
+    height: 50
   },
   content: {
     flex: 1,
