@@ -10,6 +10,7 @@ export default class Home extends Component {
     headerStyle: {
       backgroundColor: '#393e46'
     },
+    headerBackTitle: null,
     headerTintColor: '#fff',
     headerTitleStyle: {
       fontWeight: 'bold'
