@@ -5,8 +5,13 @@ import { Ionicons } from '@expo/vector-icons';
 export default function MovieCard(props) {
   const { movie } = props;
 
+  openMovieChat = () => {
+    const id = props.movie.title;
+    props.navigation.navigate('MovieChat', { id });
+  };
+
   return (
-    <TouchableOpacity onPress={this.onPressMovie}>
+    <TouchableOpacity onPress={this.openMovieChat}>
       <View style={styles.movieContent}>
         <Text>{movie.title}</Text>
         <Ionicons name="ios-arrow-forward" size={20} />

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
 import data from '../data/movies.json';
 
-class Home extends Component {
+export default class Home extends Component {
   static navigationOptions = {
     title: 'Home',
     headerStyle: {
@@ -28,9 +28,8 @@ class Home extends Component {
     });
   }
 
-  onPressMovie = () => {};
-
   render() {
+    const { navigation } = this.props;
     const { movies, loading } = this.state;
 
     return (
@@ -44,7 +43,7 @@ class Home extends Component {
                 <Text style={styles.text}>Select a Movie, and see its comments.</Text>
                 <>
                   {movies.map(movie => (
-                    <MovieCard key={movie.title} movie={movie} />
+                    <MovieCard key={movie.title} movie={movie} navigation={navigation} />
                   ))}
                 </>
               </View>
@@ -77,5 +76,3 @@ const styles = StyleSheet.create({
     padding: 10
   }
 });
-
-export default Home;
