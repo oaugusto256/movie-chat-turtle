@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 
-export default (Loading = () => {
+export default function Loading() {
   return (
     <View style={styles.loadingContainer}>
       <ActivityIndicator size="large" color="#00adb5" />
     </View>
   );
-});
+}
 
 const styles = StyleSheet.create({
   loadingContainer: {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import {
+ Text, View, StyleSheet, ScrollView, Dimensions, TouchableOpacity 
+} from 'react-native';
 import Loading from '../components/Loading';
 import data from '../data/movies.json';
 
@@ -28,6 +30,8 @@ class Home extends Component {
     });
   }
 
+  onPressMovie = () => {};
+
   render() {
     const { movies, loading } = this.state;
 
@@ -39,19 +43,16 @@ class Home extends Component {
           ) : (
             <ScrollView>
               <View style={styles.content}>
-                <Text style={styles.text}>
-                  Select a <Text style={styles.emphasizedText}>Movie</Text> to
-                  see comments.
-                </Text>
+                <Text style={styles.text}>Select a Movie, and see its comments.</Text>
                 <>
-                  {movies.map((movie, index) => {
-                    return (
-                      <View key={index} style={styles.movieContent}>
+                  {movies.map(movie => (
+                    <TouchableOpacity key={movie.title} onPress={this.onPressMovie}>
+                      <View style={styles.movieContent}>
                         <Text>{movie.title}</Text>
                         <Ionicons name="ios-arrow-forward" size={20} />
                       </View>
-                    );
-                  })}
+                    </TouchableOpacity>
+                  ))}
                 </>
               </View>
             </ScrollView>
@@ -67,7 +68,7 @@ const { height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    height: height,
+    height,
     backgroundColor: '#d8d8d8'
   },
   text: {
