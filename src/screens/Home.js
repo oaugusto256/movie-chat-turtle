@@ -70,7 +70,10 @@ const styles = StyleSheet.create({
   },
   movieContent: {
     flex: 1,
-    height: 50
+    height: 50,
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
   },
   content: {
     flex: 1,
