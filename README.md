@@ -10,7 +10,7 @@ The application was tested using a iOS(iPhone 6S) device, unfortunately I don't 
 
 ## How to use and test
 
-*PS: It's necessary that you have a mobile device that has Expo app, and a computer that can run the Expo CLI.*
+_PS: It's necessary that you have a mobile device that has Expo app, and a computer that can run the Expo CLI._
 
 Clone the repository to a folder of your choice, redirect to the cloned repository and execute the following command:
 
@@ -31,21 +31,22 @@ Use the mobile device camera to scan the QRCode and run the project.
 The project was architectured at the following way:
 
 - src
-  - components      // Reusable components and dumb components
-  - screens         // Mobile screens that have a state 
-  - data            // Data movie
-  - helpers         // Methods and functions to manipulate data
-  - config          // Firebase credentials and configuration
+  - components // Reusable components and dumb components
+  - screens // Mobile screens that have a state
+  - data // Data movie
+  - helpers // Methods and functions to manipulate data
+  - config // Firebase credentials and configuration
 - App.js
 
 ## Libs
 
 Below we can see all the libs used in the project:
 
-|       Name       |                                                                                         Function                                                                                         |
-| :--------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|       expo       |                           A free and open source toolchain built around React Native to help you build native iOS and Android apps using JavaScript and React.                           |                                                                       |
-| react-navigation |                                                                                 React native navigation                                                                                  |
+|       Name       |                                                               Function                                                               |
+| :--------------: | :----------------------------------------------------------------------------------------------------------------------------------: |
+|       expo       | A free and open source toolchain built around React Native to help you build native iOS and Android apps using JavaScript and React. |
+| react-navigation |                                          Routing and navigation for your React Native apps.                                          |
+|     firebase     |                  Google's mobile platform that helps you quickly develop high-quality apps and grow your business.                   |
 
 ## What could be better?
 
