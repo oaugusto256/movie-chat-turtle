@@ -9,15 +9,17 @@ import {
   ScrollView,
   KeyboardAvoidingView
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import Loading from '../components/Loading';
 import Button from '../components/Button';
 import { database } from '../config';
+import MovieComment from '../components/MovieComment';
 
 class MovieChat extends Component {
   static navigationOptions = ({ navigation }) => ({
     title: navigation.getParam('id', 'DEFAULT_VALUE'),
     headerStyle: {
-      backgroundColor: '#393e46'
+      backgroundColor: '#247BA0'
     },
     headerBackTitle: null,
     headerTintColor: '#fff',
@@ -74,14 +76,15 @@ class MovieChat extends Component {
     const { movieComments } = this.state;
 
     if (movieComments.length > 0) {
-      return movieComments.map(comment => (
-        <View key={comment.id} style={styles.commentCard}>
-          <Text>{comment.text}</Text>
-        </View>
-      ));
+      return movieComments.map(comment => <MovieComment key={comment.id} comment={comment} />);
     }
 
-    return <Text>No comment has been added yet!</Text>;
+    return (
+      <View style={styles.noCommentsContent}>
+        <Ionicons name="ios-sad" size={65} color="#247BA0" />
+        <Text style={styles.noCommentsText}>No comment has been added yet!</Text>
+      </View>
+    );
   };
 
   render() {
@@ -122,6 +125,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#d8d8d8',
     padding: 10
   },
+  noCommentsContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: height / 2
+  },
+  noCommentsText: {
+    fontSize: 18,
+    color: '#247BA0'
+  },
   commentsContent: {
     flex: 1
   },
@@ -148,24 +161,6 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     padding: 10
-  },
-  commentCard: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 10,
-    marginBottom: 10,
-    borderWidth: 0,
-    borderRadius: 4,
-    backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1
-    },
-    shadowOpacity: 0.18,
-    shadowRadius: 1.0,
-    elevation: 1
   }
 });
 

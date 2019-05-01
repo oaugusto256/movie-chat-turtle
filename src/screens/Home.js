@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import {
+ Text, View, StyleSheet, ScrollView, Dimensions 
+} from 'react-native';
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
 import data from '../data/movies.json';
@@ -8,7 +10,7 @@ export default class Home extends Component {
   static navigationOptions = {
     title: 'Home',
     headerStyle: {
-      backgroundColor: '#393e46'
+      backgroundColor: '#247BA0'
     },
     headerBackTitle: null,
     headerTintColor: '#fff',
