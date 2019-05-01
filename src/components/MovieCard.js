@@ -1,5 +1,7 @@
 import React from 'react';
-import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+import {
+ TouchableOpacity, View, Text, StyleSheet 
+} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function MovieCard(props) {
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: 65,
+    height: 60,
     padding: 10,
     marginBottom: 10,
     borderWidth: 0,
