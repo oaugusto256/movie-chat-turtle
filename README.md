@@ -2,6 +2,8 @@
 
 React native app to be used as a challenge for Turtle.
 
+![alt text](https://github.com/tavioalves/movie-chat-turtle/blob/master/images/movie-chat.jpeg)
+
 ## Tested with
 
 The application was tested using a iOS(iPhone 6S) device, unfortunately I don't have a Android device to test the app with it.
