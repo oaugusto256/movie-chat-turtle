@@ -29,8 +29,11 @@ Use the mobile device camera to scan the QRCode and run the project.
 The project was architectured at the following way:
 
 - src
-  - components
-  - screens
+  - components      // Reusable components and dumb components
+  - screens         // Mobile screens that have a state 
+  - data            // Data movie
+  - helpers         // Methods and functions to manipulate data
+  - config          // Firebase credentials and configuration
 - App.js
 
 ## Libs
@@ -41,6 +44,18 @@ Below we can see all the libs used in the project:
 | :--------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 |       expo       |                           A free and open source toolchain built around React Native to help you build native iOS and Android apps using JavaScript and React.                           |                                                                       |
 | react-navigation |                                                                                 React native navigation                                                                                  |
+
+## What could be better?
+
+- Authentication to use the app
+- Features to update and delete comments
+- Feature to like or dislike a comment
+- Show the comment' author with date and time
+- Select a movie and see more information
+- Show a movie image
+- Create an About screen
+- Animations
+- Fetch movie data from IMDB Api or other
 
 ## License
 
