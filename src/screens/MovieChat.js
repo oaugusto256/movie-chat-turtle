@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
+import { database } from '../config';
 
 class MovieChat extends Component {
   static navigationOptions = {
@@ -12,6 +13,10 @@ class MovieChat extends Component {
       fontWeight: 'bold'
     }
   };
+
+  componentDidMount() {
+    console.log(database());
+  }
 
   render() {
     return (
